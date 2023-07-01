@@ -1,0 +1,6 @@
+body{
+    background-color: aquamarine;
+}
+body.title{
+    align-items: center;
+}
