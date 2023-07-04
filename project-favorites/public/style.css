@@ -1,60 +1,85 @@
 body{
-    background: url("./images/body.png") no-repeat right top fixed;
-    font-size: 20px;
+  background: url("./images/body.png") no-repeat right top fixed;
+  position: relative;
 }
-/*div {
-    padding: 250px;
-    margin: 200px;
-    background-color: aliceblue;
-    margin: 20px 0 0 0;
-}
-div .buscar{
-    background-color: aliceblue;
-    padding: 250px;
+* {
+  box-sizing: border-box;
 }
 
-/* style.css */
+html {
+  font-size: 62.5%;
+}
 
-body {
-    background-color: #f2f2f2;
-    width: 928px;
-    border-radius: 15px;
 
-  }
+.container {
+  width: 80%;
+  max-width: 400px;
+  margin: auto;
+}
+
+h1 {
+  text-align:center;
+  color: white;
+  display: block;
+  font-size: 3.4rem;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  width: 50%;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight:300;
+}
+
+ul {
+  background: white;
+  align-items: center;
+  box-shadow: 0px 4px 8px -2px #00000033;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  font-size: 1.4rem;
+  width: 50%;
+  margin: 0 auto;
   
-  input[type="text"] {
-    width: 800px;
-    background-color: #fff;
-    padding: 20px;
-    border: none;
-    border-radius: 15px;
-    margin-bottom: 20px;
-  }
+}
+
+li {
+  list-style: none;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+
+a {
+  display: block;
+  color: #333;
+  text-decoration: none;  
+  padding: 16px 0;
+  font-size: 1.8rem;
   
-  div.insert {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-  
-  h1.title {
-    color: #333;
-  }
-  button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 20px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+li:first-child,
+li:last-child {
+  border: none;
+}
+
+li span {
+  cursor:pointer;
+}
