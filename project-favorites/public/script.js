@@ -47,7 +47,23 @@ function addElement({ name, url }) {
 
 function removeElement(element) {
     // criem os códigos
+    const ul = document.querySelector('ul');
+    const li = element.parentNode;
+  
+  // Verifica se o elemento é filho da lista
+    if (ul.contains(li)) {
+        ul.removeChild(li);
 }
+
+function editElement(element, newName, newUrl) {
+    const a = element.querySelector('a');
+    
+    if (a) {
+      a.textContent = newName;
+      a.href = newUrl;
+    }
+  }
+  
 
 form.addEventListener('submit', (event) => {
     
