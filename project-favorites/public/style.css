@@ -1,6 +1,60 @@
 body{
-    background-color: aquamarine;
+    background: url("./images/body.png") no-repeat right top fixed;
+    font-size: 20px;
 }
-body.title{
+/*div {
+    padding: 250px;
+    margin: 200px;
+    background-color: aliceblue;
+    margin: 20px 0 0 0;
+}
+div .buscar{
+    background-color: aliceblue;
+    padding: 250px;
+}
+
+/* style.css */
+
+body {
+    background-color: #f2f2f2;
+    width: 928px;
+    border-radius: 15px;
+
+  }
+  
+  input[type="text"] {
+    width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  div.insert {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  h1.title {
+    color: #333;
+  }
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
+  }
