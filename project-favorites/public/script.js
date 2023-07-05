@@ -19,46 +19,48 @@ load()
 */
 
 function addElement({ name, url }) {
-    const ul = document.querySelector('ul');
-    
-    // Cria um novo elemento li
-    const li = document.createElement('li');
-    
-    // Cria um novo elemento link
-    const a = document.createElement('a');
-    a.textContent = name;
-    a.href = url;
-    
-    // Adiciona o link ao elemento li
-    li.appendChild(a);
-    
-    // Adiciona o elemento li à lista ul
-    ul.appendChild(li);
-  }
-  
-  // Exemplo de uso da função
-  const link = {
-    name: 'Google',
-    url: 'https://www.google.com'
-  };
-  
-  addElement(link);
-  
+  //seleciona pelo id
+  const ul = document.getElementById('link-list');
 
-  function removeElement(element) {
-    if (confirm('Tem certeza que deseja deletar?'))
-        element.parentNode.remove()
+  // Cria um novo elemento li
+  const li = document.createElement('li');
+
+  //cria um elemento button e adiciona e chama a função de remover
+  const btn = document.createElement('button');
+  btn.textContent = 'X';
+  btn.addEventListener('click', function() {
+      removeElement(li);
+  });
+
+  // Cria um novo elemento link
+  const a = document.createElement('a');
+  a.textContent = name;
+  a.href = url;
+
+  // Adiciona o link ao elemento li
+  li.appendChild(a);
+  li.appendChild(btn);
+
+  // Adiciona o elemento li à lista ul
+  ul.appendChild(li);
 }
 
-function editElement(element, newName, newUrl) {
-    const a = element.querySelector('a');
-    
-    if (a) {
-      a.textContent = newName;
-      a.href = newUrl;
-    }
+// Exemplo de uso da função
+const link = {
+  name: 'Google',
+  url: 'https://www.google.com'
+};
+
+addElement(link);
+
+//função para remover o link
+function removeElement(element) {
+  if(confirm('Deseja realmente excluir esse link?')){
+    const ul = document.getElementById('link-list');
+    ul.removeChild(element);
   }
-  
+}
+ 
 
 form.addEventListener('submit', (event) => {
     

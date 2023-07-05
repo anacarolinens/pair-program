@@ -1,6 +1,6 @@
 body{
-  background: url("./images/body.png") no-repeat right top fixed;
-  position: relative;
+  background-image: url("https://as2.ftcdn.net/v2/jpg/02/68/99/99/1000_F_268999986_VT8t3jWyys2NLnvT6u2FxP8WDiLmbq9x.jpg");
+  background-size: cover;
 }
 * {
   box-sizing: border-box;
@@ -38,6 +38,10 @@ input {
   outline: none;
   font-size: 1.6rem;
   font-weight:300;
+}
+#button {
+  margin-top: px;
+  float: right;
 }
 
 ul {

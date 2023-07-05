@@ -11,7 +11,7 @@ const path = require('path')
             JSON.stringify(data, null, 2),
             err=> {
                 if (err) throw err
-                res.cb('Operação realizada com sucesso!')
+                    cb('Operação realizada com sucesso!')
             })
     }
 
@@ -19,9 +19,10 @@ http.createServer((req, res) => {
     const { name, url, del } = URL.parse(req.url, true).query
     if(!name || !url)
         return res.end(JSON.stringify(data))
-    if(del)
+    if(del){
         data.urls = data.urls.filter(item => item.url != url)
-        return writeFile(message => res.end(message))
+        return writeFile(message => res.end(message)
+    )}
     data.urls.push({name, url})  
     return writeFile(message => res.end(message))
 
