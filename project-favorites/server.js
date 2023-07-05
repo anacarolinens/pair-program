@@ -18,6 +18,7 @@ http.createServer((req, res) => {
 
     fs.readFile(pathFile, 
         (err, content) => {
+            if(err) throw err
             res.end(content) //pegando todo conteudo e mandando para o servercd.. sem ele o html, css e javascript não vai para a pagina
         })
 

@@ -45,14 +45,9 @@ function addElement({ name, url }) {
   addElement(link);
   
 
-function removeElement(element) {
-    // criem os códigos
-    const ul = document.querySelector('ul');
-    const li = element.parentNode;
-  
-  // Verifica se o elemento é filho da lista
-    if (ul.contains(li)) {
-        ul.removeChild(li);
+  function removeElement(element) {
+    if (confirm('Tem certeza que deseja deletar?'))
+        element.parentNode.remove()
 }
 
 function editElement(element, newName, newUrl) {
