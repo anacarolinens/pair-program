@@ -14,9 +14,10 @@ async function load() {
 
 load()
 
+
+
+
 function addElement({ name, url }) {
-  //seleciona pelo id
-  const ul = document.getElementById('link-list');
 
   // Cria um novo elemento li
   const li = document.createElement('li');
@@ -26,8 +27,8 @@ function addElement({ name, url }) {
   btn.textContent = 'X';
   btn.addEventListener('click', function() {
       removeElement(li);
-      
-  });
+  })
+ 
 
   // Cria um novo elemento link
   const a = document.createElement('a');
@@ -39,18 +40,18 @@ function addElement({ name, url }) {
     // Adiciona o elemento li à lista ul
     ul.appendChild(li);
 
-  try {
-    fetch(`http://localhost:3000?name=${nome}&url=${url}, `, {
-      method:'POST'
-    })
-  }catch (err){
-    console.log('Erro!',err)
 
-  }
   // Adiciona o link ao elemento li
+}
 
+async function addElementAndSendToApi({ name, url }){
+  addElement({ name, url })
+  try {
+    fetch(`http://localhost:3000?name=${name}&url=${url}`)
+    }catch (err){
+      console.log('Erro!',err)
 
-  
+    }
 }
 
 // // Exemplo de uso da função
@@ -63,14 +64,13 @@ function addElement({ name, url }) {
 
 //função para remover o link
 function removeElement(element) {
+
   if(confirm('Deseja realmente excluir esse link?')){
     const ul = document.getElementById('link-list');
-    
+    console.log(ul)
     try {
       ul.removeChild(element);
-      fetch(`http://localhost:3000?name=${element.nome}&url=${element.url}&del=${element.true}`, {
-        method:'DELETE'
-      })
+      fetch(`http://localhost:3000?name=${element.name}&url=${element.url}&del=${true}`)
        
    }catch(err){
      console.log('Erro!',err)
