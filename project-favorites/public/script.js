@@ -24,24 +24,21 @@ function addElement({ name, url }) {
 
   //cria um elemento button e adiciona e chama a função de remover
   const btn = document.createElement('button');
-  btn.textContent = 'X';
-  btn.addEventListener('click', function() {
-      removeElement(li);
-  })
- 
 
-  // Cria um novo elemento link
+  btn.innerHTML = 'X';
+  btn.addEventListener('click', function() {
+      removeElement(btn);
+  })
+
   const a = document.createElement('a');
   a.textContent = name;
   a.href = url;
-      li.appendChild(a);
-    li.appendChild(btn);
+  
+    ul.append(li);
+    li.append(a);
+    li.append(btn);
+ 
 
-    // Adiciona o elemento li à lista ul
-    ul.appendChild(li);
-
-
-  // Adiciona o link ao elemento li
 }
 
 async function addElementAndSendToApi({ name, url }){
@@ -51,7 +48,8 @@ async function addElementAndSendToApi({ name, url }){
     }catch (err){
       console.log('Erro!',err)
 
-    }
+  }
+
 }
 
 // // Exemplo de uso da função
@@ -66,8 +64,7 @@ async function addElementAndSendToApi({ name, url }){
 function removeElement(element) {
 
   if(confirm('Deseja realmente excluir esse link?')){
-    const ul = document.getElementById('link-list');
-    console.log(ul)
+   const ul = document.getElementById('link-list');
     try {
       ul.removeChild(element);
       fetch(`http://localhost:3000?name=${element.name}&url=${element.url}&del=${true}`)
@@ -75,6 +72,8 @@ function removeElement(element) {
    }catch(err){
      console.log('Erro!',err)
    }
+
+  element.parentNode.remove()
   }
 }
  
@@ -96,7 +95,7 @@ form.addEventListener('submit', (event) => {
     if (!/^http/.test(url))
         return alert('Digite a url da maneira correta.')//formatcao do campo
 
-    addElement({ name, url })
+    addElementAndSendToApi({ name, url })
 
     input.value = ''
 
