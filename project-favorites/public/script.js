@@ -61,30 +61,30 @@ async function addElementAndSendToApi({ name, url }){
 // addElement(link);
 
 //função para remover o link
-async function removeElement(element) {
-    const li = element.parentNode
-    const ul = li.parentNode
-    const name = li.querySelector('a').textContent
-    const url = li.querySelector('a').href  
-
-  if(confirm('Deseja realmente excluir esse link?')){
-    try {
-      fetch(`http://localhost:3000/?name=${name}&url=${url}&del=true}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'DELETE',
-        },
-      })
-
-      ul.removeChild(li) 
-   }catch(err){
-     console.log('Erro!',err)
-   }
-
+// Função para enviar as alterações para o backend em formato JSON
+async function removeElementFromBackend(name, url) {
+  try {
+    await fetch(`http://localhost:3000/?name=${name}&url=${url}&del=true`, {
+      method: 'DELETE'
+    })
+  } catch (err) {
+    console.log('Erro!', err);
   }
 }
+
+// Função para remover o link do frontend e enviar as alterações para o backend
+async function removeElement(element) {
+  const li = element.parentNode;
+  const ul = li.parentNode;
+  const name = li.querySelector('a').textContent;
+  const url = li.querySelector('a').href;
+
+  if (confirm('Deseja realmente excluir esse link?')) {
+    await removeElementFromBackend(name, url);
+    ul.removeChild(li);
+  }
+}
+
 
  
 
