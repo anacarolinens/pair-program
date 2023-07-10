@@ -19,8 +19,11 @@ http.createServer((req, res) => {
     
     //tratamento do cors
     res.writeHead(200, {
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
     })
+    
 
     if(!name || !url)
         return res.end(JSON.stringify(data))

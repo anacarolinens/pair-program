@@ -8,7 +8,7 @@ http.createServer((req, res) => {
     //console.log(file)
     const pathFile = path.join(__dirname, 'public', file)
     const extname = path.extname(pathFile) // guardando o nome da extenção do cara que está sendo solocitado/ requisitando aquela chamada
-    const allowedFileTypes = ['.html','.css','.js'] // cria um vetor com os finais que são aceitados
+    const allowedFileTypes = ['.html','.css','.js', '.png'] // cria um vetor com os finais que são aceitados
 
     const allowed = allowedFileTypes.find((item) => //metodo para verificar
         item == extname)

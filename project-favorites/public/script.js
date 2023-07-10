@@ -61,21 +61,31 @@ async function addElementAndSendToApi({ name, url }){
 // addElement(link);
 
 //função para remover o link
-function removeElement(element) {
+async function removeElement(element) {
+    const li = element.parentNode
+    const ul = li.parentNode
+    const name = li.querySelector('a').textContent
+    const url = li.querySelector('a').href  
 
   if(confirm('Deseja realmente excluir esse link?')){
-   const ul = document.getElementById('link-list');
     try {
-      ul.removeChild(element);
-      fetch(`http://localhost:3000?name=${element.name}&url=${element.url}&del=${true}`)
-       
+      fetch(`http://localhost:3000/?name=${name}&url=${url}&del=true}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'DELETE',
+        },
+      })
+
+      ul.removeChild(li) 
    }catch(err){
      console.log('Erro!',err)
    }
 
-  element.parentNode.remove()
   }
 }
+
  
 
 form.addEventListener('submit', (event) => {
