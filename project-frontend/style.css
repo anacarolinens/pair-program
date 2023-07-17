@@ -1,28 +1,130 @@
 /*Mobile*/
+@media (max-width: 479px){
+    body {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #F9B7D8;
 
-body {
-    display: grid;
-    height: 100vh;
-    margin: 0%;
-    padding: 0%;
+    }
 
-}
-.header-menu {
 
-}
+    img {
+        width: 70px;
+        height: auto;
+        margin-top: 20px;
+        
+    }
+        
+    /*Nav menu*/
+    .nav-toggle {
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-color: #333;
+      }
+      
+      .nav-toggle::before,
+      .nav-toggle::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .nav-toggle::before {
+        margin-bottom: 5px;
+      }
+      
+      .nav-toggle::after {
+        margin-top: 5px;
+      }
+      
+      .nav-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+      }
+      
+      .nav-menu.active {
+        display: block;
+      }
+      
+      .nav-menu li {
+        margin-right: 10px;
+      }
+      
+      .nav-menu li:last-child {
+        margin-right: 0;
+      }
+      
+      .nav-menu li a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: gray;
+      }
+      
+      .nav-menu li a:hover {
+        background-color: #f2f2f2;
+      }
+      
 
-#footer{
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 6.5rem;
+
+
+    .input-form {
+        position: absolute;
+        width: 100%;
+        height: 6.5rem;
+    }
+
+
+    .div-section-1 {
+        width: 100%;
+        height: 6.5rem;
+        grid-row: 4 / span 1;
+    }
+    .div-section-2 {
+        width: 100%;
+        height: 6.5rem;
+        grid-row: 5 / span 1;
+    }
+    .div-section-3 {
+        width: 100%;
+        height: 6.5rem;
+        }
+    .paragrafo {
+        width: 100%;
+        height: 6.5rem;
+        }
+
+    #footer{
+        background-color: black;
+        
+        width: 100%;
+        height: 6.5rem;
+        color: aliceblue;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+    }
 }
 
 
 
 /*Tablet*/
-@media ( min-width: 480px ) {
+@media ( min-width: 480px) and (max-width: 767px) {
 
 
 }
