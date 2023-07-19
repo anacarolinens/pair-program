@@ -30,25 +30,14 @@
     .menu {
       position: absolute;
       top: 0;
-      width: 100px;
+      left: 20px; 
+      width: 100%;
+
+      transform: translateX(-100%);
     }
 
-    .btnMenu {
-      display: block;
-      background-repeat: no-repeat;
-      background-position: 15px center;
-      text-indent: -9999px;
-      padding: 20px 15px;
-    
-    }
-
-    .btnMenu-open {
-      background-image: url(/project-frontend/img/burger-menu.svg);
-    }
-
-    .btnMenu-close{
-      background-color: #F56ACE;
-      background-image: url(/project-frontend/img/burger-menu-claro.svg);
+    .menu-open {
+      transform: translateX(0);
     }
 
     .menu-item {
@@ -63,6 +52,32 @@
       text-transform: uppercase;
       font-size: 12px;
     }
+
+    /* .wrap-menu{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    } */
+
+    .btnMenu {
+      display: block;
+      background-repeat: no-repeat;
+      background-position: 15px center;
+      text-indent: -9999px;
+      padding: 20px 15px;  
+ 
+    }
+
+    .btnMenu-open {
+      background-image: url(/project-frontend/img/burger-menu.svg);
+      transform: ;
+    }
+
+    .btnMenu-close{
+      background-color: #F56ACE;
+      background-image: url(/project-frontend/img/burger-menu-claro.svg);
+    }
+
 
 
 
